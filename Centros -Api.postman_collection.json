@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "89adb52d-eb7a-4832-ae1b-e6e9a44e1683",
+		"name": "Centros -Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13127645"
+	},
+	"item": [
+		{
+			"name": "Departamento",
+			"item": [
+				{
+					"name": "ListDepartamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/departamento/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"departamento",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Provincia",
+			"item": [
+				{
+					"name": "ListProvincia by Departamento Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/provincia/by-departamento?id=06",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"provincia",
+								"by-departamento"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "06"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Distrito",
+			"item": [
+				{
+					"name": "ListDistrito by Provincia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/distrito/by-provincia?id=0601",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"distrito",
+								"by-provincia"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0601"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Centros Medicos",
+			"item": [
+				{
+					"name": "List Centros Medicos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos Paginado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/all-pagin?page=0&size=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"all-pagin"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos hateoas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "contra1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "JPANTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/all-hateoas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"all-hateoas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos by Ruc",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "contra1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "JPANTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/by-ruc?ruc=20604219818",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"by-ruc"
+							],
+							"query": [
+								{
+									"key": "ruc",
+									"value": "20604219818"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos by Departamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/by-departamento?id=02",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"by-departamento"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "02"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos by Departamento Pagin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/by-departamento-pagin?id=20&page=0&size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"by-departamento-pagin"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "20"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos by Provincia Pagin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/by-provincia-pagin?id=2001&page=0&size=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"by-provincia-pagin"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2001"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos by Distrito Pagin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/by-distrito-pagin?id=200101&page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"by-distrito-pagin"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "200101"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos by Provincia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/by-provincia?id=2001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"by-provincia"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Centros Medicos by Distrito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/by-distrito?id=200101",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"by-distrito"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "200101"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Centros",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "contra1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "JPANTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ruc\" : \"20604219818\",\r\n    \"nombre\" : \"CENTRO MEDICO ASISTENCIAL SAN ANDRES S.A.C.\",\r\n    \"direccion\" : \"URB. ANGAMOS I ETAPA, MZ. L LT. 8 INT. 101\",\r\n    \"departamentoId\" : \"20\",\r\n    \"provinciaId\" : \"2001\",\r\n    \"distritoId\" :\"200101\",\r\n    \"autorizacion\" :1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Centros",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "contra1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "JPANTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "ruc",
+								"value": "20604692335",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"CENTRO MEDICO ASISTENCIAL SAN ANDRES S.A.C. UPDATE\",\r\n    \"direccion\" : \"URB. ANGAMOS I ETAPA, MZ. L LT. 8 INT. 101\",\r\n    \"departamentoId\" : \"20\",\r\n    \"provinciaId\" : \"2001\",\r\n    \"distritoId\" :\"200101\",\r\n    \"autorizacion\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/20604219818",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"20604219818"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update parcial Centros",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "contra1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "JPANTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "ruc",
+								"value": "20604692335",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ruc\" : \"20604692335\",\r\n    \"nombre\" : \"CENTRO MEDICO ASISTENCIAL SAN ANDRES S.A.C. prueba\",\r\n    \"direccion\" : \"URB. ANGAMOS I ETAPA, MZ. L LT. 8 INT. 101 prueba\",\r\n    \"departamentoId\" : \"10\",\r\n    \"provinciaId\" : \"1001\",\r\n    \"distritoId\" :\"100101\",\r\n    \"autorizacion\" : 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/20604219818",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"20604219818"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Centros",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "contra1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "JPANTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "ruc",
+								"value": "20604692335",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/centromedico/20604219818",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"centromedico",
+								"20604219818"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "contra1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "JPANTA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ruc\" : \"20604692335\",\r\n    \"nombre\" : \"CENTRO MEDICO ASISTENCIAL SAN ANDRES S.A.C.\",\r\n    \"direccion\" : \"URB. ANGAMOS I ETAPA, MZ. L LT. 8 INT. 101\",\r\n    \"departamentoId\" : \"20\",\r\n    \"provinciaId\" : \"2001\",\r\n    \"distritoId\" :\"200101\",\r\n    \"autorizacion\" : 1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
